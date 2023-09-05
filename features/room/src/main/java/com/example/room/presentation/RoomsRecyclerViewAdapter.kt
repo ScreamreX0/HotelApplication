@@ -6,21 +6,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.room.databinding.RoomFragmentBinding
+import com.example.room.databinding.RoomItemBinding
+import com.example.room.domain.dao.RoomDao
 
-class RoomsRecyclerViewAdapter: RecyclerView.Adapter<RoomsRecyclerViewAdapter.RoomViewHolder>() {
-    inner class RoomViewHolder(binding: RoomFragmentBinding) : ViewHolder(binding.root)
+class RoomsRecyclerViewAdapter(
+    rooms: List<RoomDao>
+): RecyclerView.Adapter<RoomsRecyclerViewAdapter.RoomViewHolder>() {
+    inner class RoomViewHolder(val binding: RoomItemBinding) : ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomViewHolder {
-        val binding = RoomFragmentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = RoomItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return RoomViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: RoomViewHolder, position: Int) {
-        // TODO("Not yet implemented")
+
     }
 
     override fun getItemCount(): Int {
-        return 0
-        // TODO("Not yet implemented")
+        return 3
     }
 }
