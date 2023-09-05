@@ -2,11 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_main"
-    app:startDestination="@id/nav_hotel">
+    app:startDestination="@+id/hotel_fragment">
 
-    <include app:graph="@navigation/nav_hotel" />
-    <include app:graph="@navigation/nav_booking" />
-    <include app:graph="@navigation/nav_room" />
-    <include app:graph="@navigation/nav_paid" />
+    <fragment
+        android:id="@+id/hotel_fragment"
+        android:name="com.example.hotel.presentation.HotelFragment"
+        android:label="HotelFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/booking_fragment"
+        android:name="com.example.booking.presentation.BookingFragment"
+        android:label="BookingFragment">
+    </fragment>
+
+    <fragment android:id="@+id/room_fragment"
+        android:name="com.example.room.presentation.RoomFragment"
+        android:label="RoomFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/paid_fragment"
+        android:name="com.example.paid.presentation.PaidFragment"
+        android:label="PaidFragment">
+    </fragment>
 
 </navigation>

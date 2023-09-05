@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.booking"
+    namespace = "com.example.navigation"
     compileSdk = 34
 
     defaultConfig {
@@ -49,6 +49,5 @@ dependencies {
     ksp("com.google.dagger:hilt-compiler:2.48")
 
     // Modules
-    implementation(project(path = ":core"))
-    implementation(project(path = ":navigation"))
+    implementation(project(":core"))
 }

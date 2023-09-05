@@ -1,8 +1,16 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        gradlePluginPortal()
+    }
+
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "dagger.hilt.android.plugin") {
+                useModule("com.google.dagger:hilt-android-gradle-plugin:2.39.1")
+            }
+        }
     }
 }
 dependencyResolutionManagement {
@@ -22,3 +30,4 @@ include(":features:booking")
 include(":features:paid")
 include(":data")
 include(":core")
+include(":navigation")

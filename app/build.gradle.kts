@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
+    id("dagger.hilt.android.plugin") apply true
 }
 
 android {
@@ -47,10 +49,15 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
 
+    // Di
+    implementation("com.google.dagger:hilt-android:2.48")
+    ksp("com.google.dagger:hilt-compiler:2.48")
+
     // Modules
     implementation(project(path = ":features:hotel"))
     implementation(project(path = ":features:room"))
     implementation(project(path = ":features:booking"))
     implementation(project(path = ":features:paid"))
-    implementation(project(":core"))
+    implementation(project(path = ":core"))
+    implementation(project(path = ":navigation"))
 }
