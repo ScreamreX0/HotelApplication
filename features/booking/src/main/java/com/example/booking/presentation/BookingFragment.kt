@@ -30,6 +30,10 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.payButton.setOnClickListener {
+            findNavController().navigate(destinationProvider.providePaidDestinationId())
+        }
         binding.backButton.setOnClickListener { findNavController().navigateUp() }
     }
 }

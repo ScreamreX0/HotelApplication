@@ -42,16 +42,16 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="TODO"
                 android:scaleType="fitXY"
-                android:src="@drawable/hotel_img_1"
-                android:contentDescription="TODO" />
+                android:src="@drawable/hotel_img_1" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="TODO"
                 android:scaleType="fitXY"
-                android:src="@drawable/hotel_img_1"
-                android:contentDescription="TODO" />
+                android:src="@drawable/hotel_img_1" />
 
         </ViewFlipper>
 
@@ -444,11 +444,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="12dp"
-            android:background="@drawable/choose_room_button"
+            android:background="@drawable/button_background"
             android:fontFamily="@font/sf_pro_display_regular"
             android:text="К выбору номера"
-            app:backgroundTint="#FF0D72FF"
             android:textColor="#FFFFFF"
+            app:backgroundTint="#FF0D72FF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/constraint_layout3" />
