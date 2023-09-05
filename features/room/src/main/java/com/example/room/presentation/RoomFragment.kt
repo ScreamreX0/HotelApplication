@@ -35,16 +35,19 @@ class RoomFragment : Fragment(R.layout.room_fragment) {
 
         val manager = LinearLayoutManager(requireContext())
         val adapter = RoomsRecyclerViewAdapter(
-            listOf(
+            rooms = List(10) {
                 RoomDao(
-                    id = 1L,
+                    id = it.toLong(),
                     name = "Hello world name",
                     price = 10F,
                     peculiarities = listOf("Hello world", "Hello world2"),
                     pricePer = "Hello world price",
                     images = emptyList()
                 )
-            )
+            },
+            navigateToBook = {
+                findNavController().navigate(destinationProvider.provideBookingDestinationId())
+            }
         )
         binding.roomsRecyclerView.layoutManager = manager
         binding.roomsRecyclerView.adapter = adapter
