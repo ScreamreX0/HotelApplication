@@ -9,6 +9,10 @@ android {
     namespace = "com.example.paid"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         minSdk = 24
 
@@ -51,4 +55,5 @@ dependencies {
     // Modules
     implementation(project(path = ":core"))
     implementation(project(path = ":navigation"))
+    implementation(project(path = ":data"))
 }
