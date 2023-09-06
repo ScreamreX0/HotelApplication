@@ -296,6 +296,7 @@
                 android:id="@+id/phone_number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="+7 (***) ***-**-**"
                 android:backgroundTint="#F6F6F9"
                 android:inputType="phone"
                 android:textColor="#14142B" />
@@ -321,7 +322,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F6F6F9"
-                android:inputType="phone"
+                android:inputType="textEmailAddress"
                 android:textColor="#14142B" />
         </com.google.android.material.textfield.TextInputLayout>
 

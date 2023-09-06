@@ -3,9 +3,11 @@ package com.example.booking.presentation
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
@@ -41,6 +43,16 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
         }
         binding.backButton.setOnClickListener { findNavController().navigateUp() }
         binding.phoneNumberEditText.maskPhoneNumber()
+        binding.mailEditText.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                val text = binding.mailEditText.text ?: ""
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()) {
+                    binding.mailLayout.error = "Неверный формат"
+                } else {
+                    binding.mailLayout.error = null
+                }
+            }
+        }
     }
 }
 
@@ -57,7 +69,7 @@ fun EditText.maskPhoneNumber() {
                 .removePrefix("$countryCode")
             var formattedText = ""
             var digitIndex = 0
-            "(***) ***-**-**".toCharArray().forEach { char ->
+            " (***) ***-**-**".toCharArray().forEach { char ->
                 if (char == '*' && digitIndex < text.length) {
                     formattedText += text[digitIndex]
                     digitIndex++
