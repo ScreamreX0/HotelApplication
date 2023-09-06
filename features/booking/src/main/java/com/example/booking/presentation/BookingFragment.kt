@@ -1,9 +1,13 @@
 package com.example.booking.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.booking.R
@@ -32,8 +36,50 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.payButton.setOnClickListener {
+            // TODO("Добавить проверку на обязательное заполнение всех полей")
             findNavController().navigate(destinationProvider.providePaidDestinationId())
         }
         binding.backButton.setOnClickListener { findNavController().navigateUp() }
+        binding.phoneNumberEditText.maskPhoneNumber()
     }
+}
+
+fun EditText.maskPhoneNumber() {
+    val countryCode = 7
+    addTextChangedListener(object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+        @SuppressLint("SetTextI18n")
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            removeTextChangedListener(this)
+
+            val text = (p0?.toString() ?: "")
+                .filter { it.isDigit() }
+                .removePrefix("$countryCode")
+            var formattedText = ""
+            var digitIndex = 0
+            "(***) ***-**-**".toCharArray().forEach { char ->
+                if (char == '*' && digitIndex < text.length) {
+                    formattedText += text[digitIndex]
+                    digitIndex++
+                } else {
+                    formattedText += char
+                }
+            }
+
+            val result = "+$countryCode$formattedText"
+
+            setText(result)
+
+            result.forEachIndexed { index, char ->
+                if (index < 2) {
+                    setSelection(2)
+                } else if (char.isDigit()) {
+                    setSelection(index + 1)
+                }
+            }
+            addTextChangedListener(this)
+        }
+
+        override fun afterTextChanged(p0: Editable?) {}
+    })
 }
