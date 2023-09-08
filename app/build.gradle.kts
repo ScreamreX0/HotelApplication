@@ -53,12 +53,17 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.48")
     ksp("com.google.dagger:hilt-compiler:2.48")
 
+    // Network
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // GSON
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
     // Modules
     implementation(project(path = ":features:hotel"))
     implementation(project(path = ":features:room"))
     implementation(project(path = ":features:booking"))
     implementation(project(path = ":features:paid"))
     implementation(project(path = ":core"))
-    implementation(project(path = ":navigation"))
     implementation(project(path = ":data"))
 }

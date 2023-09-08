@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.navigation.DestinationProvider
+import com.example.core.navigation.DestinationProvider
 import com.example.paid.R
 import com.example.paid.databinding.PaidFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.NonDisposableHandle.parent
 import javax.inject.Inject
+import kotlin.random.Random
 
 @AndroidEntryPoint
 class PaidFragment : Fragment(R.layout.paid_fragment) {
@@ -31,12 +31,15 @@ class PaidFragment : Fragment(R.layout.paid_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navigateToStart = {
+        binding.okayButton.setOnClickListener {
             findNavController().popBackStack(destinationProvider.provideHotelDestinationId(), false)
         }
 
-        binding.okayButton.setOnClickListener { navigateToStart() }
+        binding.backButton.setOnClickListener { findNavController().navigateUp() }
 
-        binding.backButton.setOnClickListener { navigateToStart() }
+        binding.description.text = getScreenDescription()
     }
+
+    private fun getScreenDescription() = "Подтверждение заказа №${getRandomOrderNumber()} может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
+    private fun getRandomOrderNumber() = Random.nextInt(0, Int.MAX_VALUE)
 }

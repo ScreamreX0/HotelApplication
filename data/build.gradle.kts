@@ -37,6 +37,7 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
     // Di
     implementation("com.google.dagger:hilt-android:2.48")
@@ -53,6 +54,4 @@ dependencies {
 
     // Modules
     implementation(project(path = ":core"))
-    implementation(project(path = ":navigation"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 }

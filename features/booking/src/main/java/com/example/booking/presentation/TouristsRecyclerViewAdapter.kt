@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.booking.R
 import com.example.booking.databinding.TouristItemBinding
-import com.example.booking.domain.dao.TouristDao
+import com.example.core.dao.booking.TouristDao
 
-class TouristsRecyclerViewAdapter(val tourists: MutableList<TouristDao>) :
+class TouristsRecyclerViewAdapter(
+    private val tourists: MutableList<TouristDao>
+) :
     RecyclerView.Adapter<TouristsRecyclerViewAdapter.TouristsViewHolder>() {
     inner class TouristsViewHolder(val binding: TouristItemBinding) :
         RecyclerView.ViewHolder(binding.root)

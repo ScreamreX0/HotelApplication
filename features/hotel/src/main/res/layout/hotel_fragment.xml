@@ -74,6 +74,7 @@
                 android:src="@drawable/baseline_star_rate_24" />
 
             <TextView
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
@@ -83,7 +84,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -97,7 +98,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -108,10 +109,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/minimalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -119,18 +120,19 @@
             android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/address" />
 
         <TextView
+            android:id="@+id/priceForIt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_pro_display_regular"
             android:text="за тур с перелётом"
-            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintBottom_toBottomOf="@+id/minimalPrice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.15"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toTopOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/minimalPrice"
+            app:layout_constraintTop_toTopOf="@+id/minimalPrice"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
@@ -145,10 +147,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/minimalPrice" />
 
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chipGroup"
+            android:id="@+id/peculiaritiesChipGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -157,51 +159,10 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:singleLine="false">
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:text="3-я линия"
-                android:textColor="#828796"
-                android:textSize="16sp"
-                app:chipStrokeWidth="0dp" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Платный Wi-Fi в фойе"
-                android:textColor="#828796"
-                android:textSize="16sp"
-                app:chipStrokeWidth="0dp" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:text="30 км до аэропорта"
-                android:textColor="#828796"
-                android:textSize="16sp"
-                app:chipStrokeWidth="0dp" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:text="1 км до пляжа"
-                android:textColor="#828796"
-                android:textSize="16sp"
-                app:chipStrokeWidth="0dp" />
-        </com.google.android.material.chip.ChipGroup>
+            app:singleLine="false" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -211,7 +172,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/peculiaritiesChipGroup" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_layout"
@@ -220,7 +181,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView6">
+            app:layout_constraintTop_toBottomOf="@id/description">
 
             <ImageView
                 android:id="@+id/imageView"

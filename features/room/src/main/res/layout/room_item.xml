@@ -39,7 +39,7 @@
     </ViewFlipper>
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -60,29 +60,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/description"
-        app:singleLine="false">
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Все включено"
-            android:textColor="#828796"
-            android:textSize="16sp"
-            app:chipStrokeWidth="0dp" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Кондиционер"
-            android:textColor="#828796"
-            android:textSize="16sp"
-            app:chipStrokeWidth="0dp" />
-    </com.google.android.material.chip.ChipGroup>
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:singleLine="false" />
 
     <LinearLayout
         android:id="@+id/more_about_room_button"
@@ -128,6 +107,7 @@
         android:textColor="#000000"/>
 
     <TextView
+        android:id="@+id/price_per"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sf_pro_display_regular"

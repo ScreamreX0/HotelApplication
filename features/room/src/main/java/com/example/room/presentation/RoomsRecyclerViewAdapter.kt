@@ -1,14 +1,18 @@
 package com.example.room.presentation
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.room.databinding.RoomItemBinding
-import com.example.room.domain.dao.RoomDao
+import com.example.core.dao.room.RoomDao
+import com.google.android.material.chip.Chip
 
 class RoomsRecyclerViewAdapter(
-    private val rooms: List<RoomDao>, private val navigateToBook: (RoomDao) -> Unit
+    private val rooms: MutableList<RoomDao>,
+    private val navigateToBook: (RoomDao) -> Unit,
+    private val getChip: (String) -> Chip,
 ) : RecyclerView.Adapter<RoomsRecyclerViewAdapter.RoomViewHolder>() {
     inner class RoomViewHolder(val binding: RoomItemBinding) : ViewHolder(binding.root)
 
@@ -20,8 +24,16 @@ class RoomsRecyclerViewAdapter(
         )
     )
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RoomViewHolder, position: Int) {
-        holder.binding.chooseRoomButton.setOnClickListener { navigateToBook(rooms[position]) }
+        with (holder.binding) {
+            chooseRoomButton.setOnClickListener { navigateToBook(rooms[position]) }
+            name.text = rooms[position].name
+            price.text = "${rooms[position].price.toInt()} ₽"
+            rooms[position].peculiarities.forEach {
+                chipGroup.addView(getChip(it))
+            }
+        }
     }
 
     override fun getItemCount() = rooms.size

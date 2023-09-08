@@ -1,24 +1,26 @@
 package com.example.hotelapplication.di
 
-import com.example.booking.domain.mappers.BookingDataMapper
-import com.example.hotel.domain.mappers.HotelMapper
+import com.example.core.mappers.BookingDataMapper
+import com.example.core.mappers.HotelMapper
 import com.example.hotelapplication.mappers.DefaultBookingDataMapper
 import com.example.hotelapplication.mappers.DefaultRoomMapper
-import com.example.room.domain.mappers.RoomMapper
+import com.example.core.mappers.RoomMapper
+import com.example.hotelapplication.mappers.DefaultHotelMapper
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface MappersModule {
-    @Binds
-    fun bindHotelMapping(defaultHotelMapper: HotelMapper): HotelMapper
+class MappersModule {
+    @Provides
+    fun providesHotelMapping(): HotelMapper = DefaultHotelMapper()
 
-    @Binds
-    fun bindBookingDataMapper(defaultBookingDataMapper: DefaultBookingDataMapper): BookingDataMapper
+    @Provides
+    fun providesBookingDataMapper(): BookingDataMapper = DefaultBookingDataMapper()
 
-    @Binds
-    fun bindRoomMapper(defaultRoomMapper: DefaultRoomMapper): RoomMapper
+    @Provides
+    fun providesRoomMapper(): RoomMapper = DefaultRoomMapper()
 }

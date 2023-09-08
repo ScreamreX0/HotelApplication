@@ -54,6 +54,4 @@ dependencies {
 
     // Modules
     implementation(project(path = ":core"))
-    implementation(project(path = ":navigation"))
-    implementation(project(path = ":data"))
 }

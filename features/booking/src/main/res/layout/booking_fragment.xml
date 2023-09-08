@@ -52,6 +52,7 @@
                 android:src="@drawable/baseline_star_rate_24" />
 
             <TextView
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
@@ -296,9 +297,9 @@
                 android:id="@+id/phone_number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+7 (***) ***-**-**"
                 android:backgroundTint="#F6F6F9"
                 android:inputType="phone"
+                android:text="+7 (***) ***-**-**"
                 android:textColor="#14142B" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -344,10 +345,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
-            tools:listitem="@layout/tourist_item"
-            app:layout_constraintTop_toBottomOf="@id/text_view"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view"
+            tools:listitem="@layout/tourist_item" />
 
         <TextView
             android:id="@+id/add_tourist"
@@ -395,6 +396,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
             android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="end"
             android:text="186 600 ₽"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -420,6 +422,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
             android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="end"
             android:text="9 300 ₽"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -445,6 +448,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
             android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="end"
             android:text="2 136 ₽"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -470,8 +474,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
             android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="end"
             android:text="2 136 ₽"
-            android:textColor="#000000"
+            android:textColor="#0D72FF"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -481,17 +486,17 @@
             android:id="@+id/pay_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_background"
             android:fontFamily="@font/sf_pro_display_regular"
             android:text="Оплатить 198 036 Р"
             android:textColor="#FFFFFF"
             app:backgroundTint="#FF0D72FF"
-            app:layout_constraintTop_toBottomOf="@id/total_price_value"
-            android:layout_marginTop="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_price_value" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

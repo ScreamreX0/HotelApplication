@@ -1,7 +1,7 @@
 package com.example.hotelapplication.navigation
 
 import com.example.hotelapplication.R
-import com.example.navigation.DestinationProvider
+import com.example.core.navigation.DestinationProvider
 import javax.inject.Inject
 
 class DefaultDestinationProvider @Inject constructor() : DestinationProvider {

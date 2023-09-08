@@ -9,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.booking.R
 import com.example.booking.databinding.BookingFragmentBinding
-import com.example.booking.domain.dao.TouristDao
-import com.example.navigation.DestinationProvider
+import com.example.core.dao.booking.TouristDao
+import com.example.core.navigation.DestinationProvider
+import com.example.core.states.DomainResult
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -27,6 +29,8 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
 
     private val tourists: MutableList<TouristDao> = mutableListOf(TouristDao(id = 1))
 
+    private val viewModel by viewModels<BookingViewModel>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,6 +40,7 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -65,6 +70,38 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
 
         initTouristsRecyclerView()
         initAddTouristButton()
+
+        viewModel.bookingData.observe(viewLifecycleOwner) {
+            when (it) {
+                is DomainResult.Success -> {
+                    val data = it.data!!
+
+                    val tourPrice = data.tourPrice.toInt()
+                    val fuelCharge = data.fuelCharge.toInt()
+                    val serviceCharge = data.serviceCharge.toInt()
+                    val totalPrice = tourPrice + fuelCharge + serviceCharge
+
+                    with(binding) {
+                        name.text = data.hotelName
+                        location.text = data.hotelAddress
+                        rating.text = "${data.rating} ${data.ratingName}"
+                        departureValue.text = data.departure
+                        countryAndCityValue.text = data.arrivalCountry
+                        datesValue.text = "${data.tourDateStart} - ${data.tourDateStop}"
+                        nightsCountValue.text = "${data.numberOfNights} ночей"
+                        roomValue.text = data.room
+                        nutritionValue.text = data.nutrition
+                        this.tourPrice.text = "$tourPrice ₽"
+                        this.fuelPrice.text = "$fuelCharge ₽"
+                        this.servicePrice.text = "$serviceCharge ₽"
+                        totalPriceValue.text = "$totalPrice ₽"
+                        payButton.text = "Оплатить $totalPrice ₽"
+                    }
+                }
+                else -> {}
+            }
+        }
+        viewModel.fetchBookingData()
     }
 
     private fun initTouristsRecyclerView() {
