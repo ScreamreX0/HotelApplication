@@ -31,15 +31,25 @@ class PaidFragment : Fragment(R.layout.paid_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.okayButton.setOnClickListener {
-            findNavController().popBackStack(destinationProvider.provideHotelDestinationId(), false)
-        }
+        initOkayButton()
+        initBackButton()
+        initScreenDesc()
+    }
 
-        binding.backButton.setOnClickListener { findNavController().navigateUp() }
-
+    private fun initScreenDesc() {
         binding.description.text = getScreenDescription()
     }
 
-    private fun getScreenDescription() = "Подтверждение заказа №${getRandomOrderNumber()} может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
+    private fun initOkayButton() = binding.okayButton.setOnClickListener {
+        findNavController().popBackStack(destinationProvider.provideHotelDestinationId(), false)
+    }
+
+    private fun initBackButton() = binding.backButton.setOnClickListener {
+        findNavController().navigateUp()
+    }
+
+    private fun getScreenDescription() =
+        "Подтверждение заказа №${getRandomOrderNumber()} может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
+
     private fun getRandomOrderNumber() = Random.nextInt(0, Int.MAX_VALUE)
 }

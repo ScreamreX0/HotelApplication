@@ -1,10 +1,8 @@
 package com.example.hotel.presentation
 
 import android.annotation.SuppressLint
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
-import android.graphics.fonts.Font
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,13 +11,11 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.core.extentions.log
 import com.example.core.navigation.DestinationProvider
 import com.example.core.states.DomainResult
 import com.example.hotel.R
 import com.example.hotel.databinding.HotelFragmentBinding
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -40,15 +36,19 @@ class HotelFragment : Fragment(R.layout.hotel_fragment) {
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
+    }
 
+    private fun init() {
+        initHotelData()
+        initChooseRoomButton()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun initHotelData() {
         viewModel.fetchHotelData()
-
-        binding.chooseRoomButton.setOnClickListener {
-            findNavController().navigate(destinationProvider.provideRoomDestinationId())
-        }
 
         viewModel.hotelData.observe(viewLifecycleOwner) {
             when (it) {
@@ -69,6 +69,10 @@ class HotelFragment : Fragment(R.layout.hotel_fragment) {
                 else -> {}
             }
         }
+    }
+
+    private fun initChooseRoomButton() = binding.chooseRoomButton.setOnClickListener {
+        findNavController().navigate(destinationProvider.provideRoomDestinationId())
     }
 
     private fun getPeculiarityChip(text: String): Chip {
@@ -93,3 +97,5 @@ class HotelFragment : Fragment(R.layout.hotel_fragment) {
         return chip
     }
 }
+
+

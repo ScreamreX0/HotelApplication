@@ -25,10 +25,9 @@ import javax.inject.Inject
 class RoomFragment : Fragment(R.layout.room_fragment) {
     @Inject
     lateinit var destinationProvider: DestinationProvider
-
     private lateinit var binding: RoomFragmentBinding
     private val viewModel by viewModels<RoomViewModel>()
-
+    private val rooms: MutableList<RoomDao> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,27 +37,20 @@ class RoomFragment : Fragment(R.layout.room_fragment) {
         return binding.root
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
+    }
 
+    private fun init() {
+        initRooms()
+        initRecyclerView()
+        initBackButton()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun initRooms() {
         viewModel.fetchRooms()
-        val rooms = mutableListOf<RoomDao>()
-
-        val manager = LinearLayoutManager(requireContext())
-        val adapter = RoomsRecyclerViewAdapter(
-            rooms = rooms,
-            navigateToBook = {
-                findNavController().navigate(destinationProvider.provideBookingDestinationId())
-            },
-            getChip = { getPeculiarityChip(it) }
-        )
-        binding.roomsRecyclerView.layoutManager = manager
-        binding.roomsRecyclerView.adapter = adapter
-
-        binding.backButton.setOnClickListener {
-            findNavController().navigateUp()
-        }
 
         viewModel.rooms.observe(viewLifecycleOwner) {
             when (it) {
@@ -67,10 +59,27 @@ class RoomFragment : Fragment(R.layout.room_fragment) {
                     rooms.addAll(it.data!!)
                     binding.roomsRecyclerView.adapter?.notifyDataSetChanged()
                 }
+
                 else -> {}
             }
         }
     }
+
+    private fun initRecyclerView() {
+        binding.roomsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.roomsRecyclerView.adapter = RoomsRecyclerViewAdapter(
+            rooms = rooms,
+            navigateToBook = {
+                findNavController().navigate(destinationProvider.provideBookingDestinationId())
+            },
+            getChip = { getPeculiarityChip(it) }
+        )
+    }
+
+    private fun initBackButton() = binding.backButton.setOnClickListener {
+        findNavController().navigateUp()
+    }
+
 
     private fun getPeculiarityChip(text: String): Chip {
         val chip = Chip(requireContext())

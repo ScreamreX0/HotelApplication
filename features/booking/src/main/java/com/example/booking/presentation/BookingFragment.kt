@@ -40,37 +40,24 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
+    }
 
-        // Pay button
-        binding.payButton.setOnClickListener {
-            // TODO("Добавить проверку на обязательное заполнение всех полей")
-            findNavController().navigate(destinationProvider.providePaidDestinationId())
-        }
-
-        // Back button
-        binding.backButton.setOnClickListener { findNavController().navigateUp() }
-
-        // Phone
-        binding.phoneNumberEditText.maskPhoneNumber()
-
-        // Email
-        binding.mailEditText.setOnFocusChangeListener { _, hasFocus ->
-            if (!hasFocus) {
-                val text = binding.mailEditText.text ?: ""
-                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()) {
-                    binding.mailLayout.error = "Неверный формат"
-                } else {
-                    binding.mailLayout.error = null
-                }
-            }
-        }
-
+    private fun init() {
+        initPayButton()
+        initBackButton()
         initTouristsRecyclerView()
         initAddTouristButton()
+        initPhoneNumberEditText()
+        initEmailEditText()
+        initBookingData()
+    }
 
+    @SuppressLint("SetTextI18n")
+    private fun initBookingData() {
+        viewModel.fetchBookingData()
         viewModel.bookingData.observe(viewLifecycleOwner) {
             when (it) {
                 is DomainResult.Success -> {
@@ -89,6 +76,7 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
                         countryAndCityValue.text = data.arrivalCountry
                         datesValue.text = "${data.tourDateStart} - ${data.tourDateStop}"
                         nightsCountValue.text = "${data.numberOfNights} ночей"
+                        hotelValue.text = data.hotelName
                         roomValue.text = data.room
                         nutritionValue.text = data.nutrition
                         this.tourPrice.text = "$tourPrice ₽"
@@ -98,15 +86,35 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
                         payButton.text = "Оплатить $totalPrice ₽"
                     }
                 }
+
                 else -> {}
             }
         }
-        viewModel.fetchBookingData()
+    }
+
+    private fun initEmailEditText() = binding.mailEditText.setOnFocusChangeListener { _, hasFocus ->
+        if (!hasFocus) {
+            val text = binding.mailEditText.text ?: ""
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()) {
+                binding.mailLayout.error = "Неверный формат"
+            } else {
+                binding.mailLayout.error = null
+            }
+        }
+    }
+
+    private fun initPhoneNumberEditText() = binding.phoneNumberEditText.maskPhoneNumber()
+
+    private fun initPayButton() = binding.payButton.setOnClickListener {
+        findNavController().navigate(destinationProvider.providePaidDestinationId())
+    }
+
+    private fun initBackButton() = binding.backButton.setOnClickListener {
+        findNavController().navigateUp()
     }
 
     private fun initTouristsRecyclerView() {
-        val layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewTourists.layoutManager = layoutManager
+        binding.recyclerViewTourists.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewTourists.adapter = TouristsRecyclerViewAdapter(tourists)
     }
 
