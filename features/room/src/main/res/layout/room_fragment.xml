@@ -22,15 +22,14 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:contentDescription="TODO" />
+            android:importantForAccessibility="no" />
 
         <TextView
             android:id="@+id/hotel_title"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_display_regular"
             android:text="Steigenberger Makadi"
-            android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="@+id/back_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

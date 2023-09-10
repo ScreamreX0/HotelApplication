@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="order_payed">Заказ оплачен</string>
+    <string name="your_order_has_been_processed">Ваш заказ принят в работу</string>
+    <string name="super_word">Супер\!</string>
+</resources>

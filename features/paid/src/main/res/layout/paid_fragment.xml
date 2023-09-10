@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/paid_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,18 +11,17 @@
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO"
         android:src="@drawable/arrow_left"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/title"
+        style="@style/Theme.App.Base.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:text="Заказ оплачен"
-        android:textColor="#000000"
+        android:text="@string/order_payed"
         app:layout_constraintBottom_toBottomOf="@+id/back_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +31,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         android:src="@drawable/party"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,12 +41,11 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/Theme.App.Base.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:text="Ваш заказ принят в работу"
-        android:textColor="#000000"
+        android:text="@string/your_order_has_been_processed"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -55,12 +53,11 @@
 
     <TextView
         android:id="@+id/description"
+        style="@style/Theme.App.Base.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/sf_pro_display_regular"
         android:gravity="center"
-       android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -71,7 +68,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
         android:fontFamily="@font/sf_pro_display_regular"
-        android:text="Супер!"
+        android:text="@string/super_word"
         android:textColor="#FFFFFF"
         app:backgroundTint="#FF0D72FF"
         app:layout_constraintBottom_toBottomOf="parent"

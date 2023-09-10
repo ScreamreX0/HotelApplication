@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     android:background="#FFFFFF"
     android:paddingStart="20dp"
-    android:paddingEnd="20dp"
     android:paddingTop="20dp"
+    android:paddingEnd="20dp"
     android:paddingBottom="12dp">
 
     <ViewFlipper
@@ -26,26 +26,24 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="TODO"
+            android:importantForAccessibility="no"
             android:scaleType="fitXY"
             android:src="@drawable/hotel_img_1" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="TODO"
+            android:importantForAccessibility="no"
             android:scaleType="fitXY"
             android:src="@drawable/hotel_img_1" />
     </ViewFlipper>
 
     <TextView
         android:id="@+id/name"
+        style="@style/Theme.App.Base.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:text="Стандартный с видом на бассейн или сад"
-        android:textColor="#000000"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,18 +68,16 @@
         android:background="@drawable/more_about_the_room_button_background"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@id/chipGroup">
 
         <TextView
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Подробности о номере"
-            android:textColor="#0D72FF"
-            android:textSize="16sp" />
+            android:text="@string/room_desc"
+            android:textColor="#0D72FF" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -89,35 +85,32 @@
             android:layout_gravity="center"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:contentDescription="TODO"
+            android:importantForAccessibility="no"
             android:src="@drawable/arrow_right_blue" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/price"
+        style="@style/Theme.App.Base.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="186 600 ₽"
+        android:layout_marginTop="16dp"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/more_about_room_button"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:layout_marginTop="16dp"
-        android:textColor="#000000"/>
+        app:layout_constraintTop_toBottomOf="@id/more_about_room_button" />
 
     <TextView
         android:id="@+id/price_per"
+        style="@style/Theme.App.Base.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:text="за 7 ночей с перелётом"
+        android:layout_marginStart="12sp"
         android:textColor="#828796"
         app:layout_constraintBottom_toBottomOf="@id/price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/price"
-        android:layout_marginStart="12sp"/>
+        app:layout_constraintStart_toEndOf="@id/price" />
 
     <Button
         android:id="@+id/choose_room_button"
@@ -126,9 +119,9 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/sf_pro_display_regular"
-        android:text="Выбрать номер"
-        app:backgroundTint="#FF0D72FF"
+        android:text="@string/choose_room"
         android:textColor="#FFFFFF"
+        app:backgroundTint="#FF0D72FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/price" />

@@ -2,24 +2,22 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hotel_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:padding="20dp">
 
         <TextView
             android:id="@+id/textView2"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Отель"
-            android:textColor="#000000"
+            android:text="@string/Hotel"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,14 +40,14 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:scaleType="fitXY"
                 android:src="@drawable/hotel_img_1" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:scaleType="fitXY"
                 android:src="@drawable/hotel_img_1" />
 
@@ -70,27 +68,24 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:src="@drawable/baseline_star_rate_24" />
 
             <TextView
                 android:id="@+id/rating"
+                style="@style/Theme.App.Base.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:text="5 Превосходно"
                 android:textColor="#FFA800" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/name"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Steigenberger Makadi"
-            android:textColor="#000000"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -99,11 +94,10 @@
 
         <TextView
             android:id="@+id/address"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет"
             android:textColor="#0D72FF"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,21 +107,20 @@
 
         <TextView
             android:id="@+id/minimalPrice"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="от 134 673 ₽"
-            android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/address" />
 
         <TextView
             android:id="@+id/priceForIt"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="за тур с перелётом"
+            android:textColor="#828796"
             app:layout_constraintBottom_toBottomOf="@+id/minimalPrice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.15"
@@ -137,12 +130,11 @@
 
         <TextView
             android:id="@+id/textView5"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Об отеле"
-            android:textColor="#000000"
+            android:text="@string/about_the_hotel"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -163,13 +155,10 @@
 
         <TextView
             android:id="@+id/description"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!"
-            android:textColor="#E6000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/peculiaritiesChipGroup" />
@@ -187,7 +176,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:paddingStart="16dp"
                 android:paddingEnd="12dp"
                 android:src="@drawable/emoji_happy"
@@ -207,23 +196,19 @@
 
                 <TextView
                     android:id="@+id/textView7"
+                    style="@style/Theme.App.Base.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toRightOf="@id/imageView"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Удобства"
-                    android:textColor="#2C3035"
-                    android:textSize="16sp" />
+                    android:text="@string/facilities"
+                    android:textColor="#2C3035" />
 
                 <TextView
                     android:id="@+id/textView8"
+                    style="@style/Theme.App.Base.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Самое необходимое"
+                    android:text="@string/essentials"
                     android:textColor="#828796"
-                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/textView7"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
             </LinearLayout>
@@ -231,6 +216,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
                 android:paddingEnd="24dp"
                 android:src="@drawable/arrow_right"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -262,7 +248,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:paddingStart="16dp"
                 android:paddingEnd="12dp"
                 android:src="@drawable/tick_square"
@@ -282,23 +268,19 @@
 
                 <TextView
                     android:id="@+id/textView9"
+                    style="@style/Theme.App.Base.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toRightOf="@id/imageView"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Что включено"
-                    android:textColor="#2C3035"
-                    android:textSize="16sp" />
+                    android:text="@string/what_is_included"
+                    android:textColor="#2C3035" />
 
                 <TextView
                     android:id="@+id/textView10"
+                    style="@style/Theme.App.Base.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Самое необходимое"
+                    android:text="@string/essentials"
                     android:textColor="#828796"
-                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/textView7"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
             </LinearLayout>
@@ -307,6 +289,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="24dp"
+                android:importantForAccessibility="no"
                 android:src="@drawable/arrow_right"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -337,7 +320,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:paddingStart="16dp"
                 android:paddingEnd="12dp"
                 android:src="@drawable/close_square"
@@ -357,23 +340,19 @@
 
                 <TextView
                     android:id="@+id/textView11"
+                    style="@style/Theme.App.Base.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toRightOf="@id/imageView"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Что не включено"
-                    android:textColor="#2C3035"
-                    android:textSize="16sp" />
+                    android:text="@string/what_is_not_included"
+                    android:textColor="#2C3035" />
 
                 <TextView
                     android:id="@+id/textView12"
+                    style="@style/Theme.App.Base.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Самое необходимое"
+                    android:text="@string/essentials"
                     android:textColor="#828796"
-                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/textView7"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
             </LinearLayout>
@@ -382,6 +361,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="24dp"
+                android:importantForAccessibility="no"
                 android:src="@drawable/arrow_right"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -407,7 +387,7 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_background"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:text="К выбору номера"
+            android:text="@string/to_choose_a_number"
             android:textColor="#FFFFFF"
             app:backgroundTint="#FF0D72FF"
             app:layout_constraintEnd_toEndOf="parent"

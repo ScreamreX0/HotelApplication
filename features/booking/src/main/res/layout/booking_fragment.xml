@@ -16,18 +16,17 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="TODO"
+            android:importantForAccessibility="no"
             android:src="@drawable/arrow_left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Бронирование"
-            android:textColor="#000000"
+            android:text="@string/booking"
             app:layout_constraintBottom_toBottomOf="@+id/back_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,38 +47,34 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:src="@drawable/baseline_star_rate_24" />
 
             <TextView
                 android:id="@+id/rating"
+                style="@style/Theme.App.Base.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:text="5 Превосходно"
                 android:textColor="#FFA800" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/name"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Steigenberger Makadi"
-            android:textColor="#000000"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
         <TextView
             android:id="@+id/location"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет"
             android:textColor="#0D72FF"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,50 +82,43 @@
 
         <TextView
             android:id="@+id/departure"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Вылет из"
+            android:text="@string/departure"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/location" />
 
         <TextView
             android:id="@+id/departure_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Санкт-Петербург"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/departure" />
 
         <TextView
             android:id="@+id/country_and_city"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Страна, город"
+            android:text="@string/city_country"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/departure_value" />
 
         <TextView
             android:id="@+id/country_and_city_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Египет, Хургада"
             android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,25 +126,21 @@
 
         <TextView
             android:id="@+id/dates"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Даты"
+            android:text="@string/dates"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/country_and_city_value" />
 
         <TextView
             android:id="@+id/dates_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="19.09.2023 – 27.09.2023"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -164,25 +148,21 @@
 
         <TextView
             android:id="@+id/nights_count"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Кол-во ночей"
+            android:text="@string/nights_count"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dates_value" />
 
         <TextView
             android:id="@+id/nights_count_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="7 ночей"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -190,25 +170,21 @@
 
         <TextView
             android:id="@+id/hotel"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Отель"
+            android:text="@string/hotel"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nights_count_value" />
 
         <TextView
             android:id="@+id/hotel_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Steigenberger Makadi"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -216,25 +192,21 @@
 
         <TextView
             android:id="@+id/room"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Номер"
+            android:text="@string/room"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hotel_value" />
 
         <TextView
             android:id="@+id/room_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Стандартный с видом на бассейн или сад"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -242,25 +214,21 @@
 
         <TextView
             android:id="@+id/nutrition"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Питание"
+            android:text="@string/nutrition"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/room_value" />
 
         <TextView
             android:id="@+id/nutrition_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Все включено"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -268,12 +236,11 @@
 
         <TextView
             android:id="@+id/title_info"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Информация о покупателе"
-            android:textColor="#000000"
+            android:text="@string/customer_info"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nutrition_value" />
@@ -285,7 +252,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:backgroundTint="#F6F6F9"
-            android:hint="Номер телефона"
+            android:hint="@string/phone_number"
             app:boxBackgroundColor="#F6F6F9"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
@@ -299,7 +266,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F6F6F9"
                 android:inputType="phone"
-                android:text="+7 (***) ***-**-**"
+                android:text="@string/phone_default_mask"
                 android:textColor="#14142B" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -310,7 +277,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#F6F6F9"
-            android:hint="Почта"
+            android:hint="@string/mail"
             app:boxBackgroundColor="#F6F6F9"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
@@ -329,11 +296,11 @@
 
         <TextView
             android:id="@+id/text_view"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту"
+            android:text="@string/warning_booking"
             android:textColor="#828796"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -352,12 +319,11 @@
 
         <TextView
             android:id="@+id/add_tourist"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Добавить туриста"
-            android:textColor="#000000"
+            android:text="@string/add_tourist"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recycler_view_tourists" />
@@ -374,17 +340,17 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
+                android:importantForAccessibility="no"
                 android:src="@drawable/plus_white" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tour"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Тур"
+            android:text="@string/tour"
             android:textColor="#828796"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -392,92 +358,78 @@
 
         <TextView
             android:id="@+id/tour_price"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
             android:gravity="end"
-            android:text="186 600 ₽"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tour" />
 
         <TextView
             android:id="@+id/fuel"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Топливный сбор"
+            android:text="@string/fuel_charge"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tour_price" />
 
         <TextView
             android:id="@+id/fuel_price"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
             android:gravity="end"
-            android:text="9 300 ₽"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/fuel" />
 
         <TextView
             android:id="@+id/service"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Сервисный сбор"
+            android:text="@string/service_charge"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fuel_price" />
 
         <TextView
             android:id="@+id/service_price"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
             android:gravity="end"
-            android:text="2 136 ₽"
-            android:textColor="#000000"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/service" />
 
         <TextView
             android:id="@+id/total_price"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:text="К оплате"
+            android:text="@string/to_pay"
             android:textColor="#828796"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/service_price" />
 
         <TextView
             android:id="@+id/total_price_value"
+            style="@style/Theme.App.Base.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:fontFamily="@font/sf_pro_display_regular"
             android:gravity="end"
-            android:text="2 136 ₽"
             android:textColor="#0D72FF"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/total_price" />
@@ -490,7 +442,6 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_background"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Оплатить 198 036 Р"
             android:textColor="#FFFFFF"
             app:backgroundTint="#FF0D72FF"
             app:layout_constraintBottom_toBottomOf="parent"
