@@ -1,4 +1,4 @@
-package com.example.core.dao.booking
+package com.example.core.dao
 
 data class TouristDao(
     var id: Long,

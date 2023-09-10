@@ -1,6 +1,6 @@
 package com.example.hotel.domain.usecases
 
-import com.example.core.dao.hotel.HotelDao
+import com.example.core.dao.HotelDao
 import com.example.core.data.HotelRepository
 import com.example.core.states.DomainResult
 import com.example.core.states.ErrorCause

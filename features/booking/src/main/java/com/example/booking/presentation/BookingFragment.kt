@@ -14,7 +14,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.booking.R
 import com.example.booking.databinding.BookingFragmentBinding
-import com.example.core.dao.booking.TouristDao
+import com.example.booking.databinding.TouristItemBinding
+import com.example.booking.domain.dao.RequiredFields
+import com.example.booking.domain.dao.TouristFields
+import com.example.core.dao.TouristDao
 import com.example.core.navigation.DestinationProvider
 import com.example.core.states.DomainResult
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,6 +34,7 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
 
     private val viewModel by viewModels<BookingViewModel>()
 
+    private lateinit var requiredFields: RequiredFields
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -53,6 +57,31 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
         initPhoneNumberEditText()
         initEmailEditText()
         initBookingData()
+        initRequiredFields()
+    }
+
+    private fun initRequiredFields() {
+        requiredFields = RequiredFields(
+            email = binding.mailEditText,
+            phone = binding.phoneNumberEditText,
+            tourists = mutableListOf()
+        )
+    }
+
+    private fun updateTouristsFields() {
+        requiredFields.tourists.clear()
+        getRecyclerViewItemBindings().forEach {
+            requiredFields.tourists.add(
+                TouristFields(
+                    nameEditText = it.nameEditText,
+                    surnameEditText = it.surnameEditText,
+                    birthdateEditText = it.birthdateEditText,
+                    citizenshipEditText = it.citizenshipEditText,
+                    internationalPassportNumberEditText = it.internationalPassportNumberEditText,
+                    internationalPassportValidityEditText = it.internationalPassportValidityEditText,
+                )
+            )
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -106,7 +135,22 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
     private fun initPhoneNumberEditText() = binding.phoneNumberEditText.maskPhoneNumber()
 
     private fun initPayButton() = binding.payButton.setOnClickListener {
-        findNavController().navigate(destinationProvider.providePaidDestinationId())
+        updateTouristsFields()
+        requiredFields.setErrorIfAnyBlank()
+        if (!requiredFields.anyBlank()) {
+            findNavController().navigate(destinationProvider.providePaidDestinationId())
+        }
+    }
+
+    private fun getRecyclerViewItemBindings(): MutableList<TouristItemBinding> {
+        val listOfRecyclerViewBindings = mutableListOf<TouristItemBinding>()
+        for (i in 0..<tourists.size) {
+            listOfRecyclerViewBindings.add(
+                (binding.recyclerViewTourists.findViewHolderForAdapterPosition(i)
+                        as TouristsRecyclerViewAdapter.TouristsViewHolder).binding
+            )
+        }
+        return listOfRecyclerViewBindings
     }
 
     private fun initBackButton() = binding.backButton.setOnClickListener {
@@ -124,7 +168,7 @@ class BookingFragment : Fragment(R.layout.booking_fragment) {
     }
 }
 
-fun EditText.maskPhoneNumber() {
+internal fun EditText.maskPhoneNumber() {
     val countryCode = 7
     addTextChangedListener(object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}

@@ -1,9 +1,9 @@
 package com.example.hotelapplication.mappers
 
 import com.example.core.Constants
-import com.example.core.entities.hotel.HotelDto
-import com.example.core.dao.hotel.AboutTheHotelDao
-import com.example.core.dao.hotel.HotelDao
+import com.example.core.dto.HotelDto
+import com.example.core.dao.AboutTheHotelDao
+import com.example.core.dao.HotelDao
 import com.example.core.mappers.HotelMapper
 import javax.inject.Inject
 

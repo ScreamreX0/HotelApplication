@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.room.databinding.RoomItemBinding
-import com.example.core.dao.room.RoomDao
+import com.example.core.dao.RoomDao
 import com.google.android.material.chip.Chip
 
 class RoomsRecyclerViewAdapter(

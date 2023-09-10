@@ -1,4 +1,4 @@
-package com.example.core.dao.hotel
+package com.example.core.dao
 
 data class HotelDao(
     val id: Long,

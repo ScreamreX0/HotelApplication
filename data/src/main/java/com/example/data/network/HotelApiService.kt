@@ -1,9 +1,8 @@
 package com.example.data.network
 
-import com.example.core.entities.booking_info.BookingDataDto
-import com.example.core.entities.hotel.HotelDto
-import com.example.core.entities.room.RoomDto
-import com.example.core.entities.room.RoomsListDto
+import com.example.core.dto.BookingDataDto
+import com.example.core.dto.HotelDto
+import com.example.core.dto.RoomsListDto
 import retrofit2.Response
 import retrofit2.http.GET
 

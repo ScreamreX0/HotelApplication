@@ -1,4 +1,4 @@
-package com.example.hotelapplication.di
+package com.example.data.di
 
 import com.example.core.data.BookingRepository
 import com.example.core.data.HotelRepository

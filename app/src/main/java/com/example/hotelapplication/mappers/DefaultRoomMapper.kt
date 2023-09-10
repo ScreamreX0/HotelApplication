@@ -1,8 +1,8 @@
 package com.example.hotelapplication.mappers
 
 import com.example.core.Constants
-import com.example.core.entities.room.RoomDto
-import com.example.core.dao.room.RoomDao
+import com.example.core.dto.RoomDto
+import com.example.core.dao.RoomDao
 import com.example.core.mappers.RoomMapper
 import javax.inject.Inject
 

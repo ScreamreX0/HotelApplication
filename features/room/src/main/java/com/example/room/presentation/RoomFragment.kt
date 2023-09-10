@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.navigation.DestinationProvider
 import com.example.room.R
 import com.example.room.databinding.RoomFragmentBinding
-import com.example.core.dao.room.RoomDao
+import com.example.core.dao.RoomDao
 import com.example.core.states.DomainResult
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint

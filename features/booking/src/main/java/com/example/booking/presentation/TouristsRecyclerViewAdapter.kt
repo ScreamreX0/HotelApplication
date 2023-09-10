@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.booking.R
 import com.example.booking.databinding.TouristItemBinding
-import com.example.core.dao.booking.TouristDao
+import com.example.core.dao.TouristDao
 
 class TouristsRecyclerViewAdapter(
     private val tourists: MutableList<TouristDao>

@@ -1,4 +1,8 @@
-package com.example.core.entities.room
+package com.example.core.dto
+
+data class RoomsListDto(
+    val rooms: List<RoomDto>
+)
 
 data class RoomDto(
     val id: Long?,

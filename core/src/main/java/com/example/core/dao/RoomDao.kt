@@ -1,4 +1,4 @@
-package com.example.core.dao.room
+package com.example.core.dao
 
 data class RoomDao(
     val id: Long,

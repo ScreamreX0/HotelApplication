@@ -1,7 +1,7 @@
 package com.example.booking.domain.usecases
 
 import com.example.core.mappers.BookingDataMapper
-import com.example.core.dao.booking.BookingDataDao
+import com.example.core.dao.BookingDataDao
 import com.example.core.data.BookingRepository
 import com.example.core.states.DomainResult
 import com.example.core.states.ErrorCause

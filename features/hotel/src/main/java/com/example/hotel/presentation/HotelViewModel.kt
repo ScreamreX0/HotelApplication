@@ -3,9 +3,8 @@ package com.example.hotel.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core.dao.hotel.HotelDao
+import com.example.core.dao.HotelDao
 import com.example.core.states.DomainResult
-import com.example.core.states.NetworkState
 import com.example.hotel.domain.usecases.GetHotelDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

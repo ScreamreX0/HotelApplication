@@ -1,4 +1,4 @@
-package com.example.core.entities.booking_info
+package com.example.core.dto
 
 data class BookingDataDto(
     val id: Long?,

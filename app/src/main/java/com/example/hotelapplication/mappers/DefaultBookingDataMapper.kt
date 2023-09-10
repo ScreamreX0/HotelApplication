@@ -1,9 +1,9 @@
 package com.example.hotelapplication.mappers
 
-import com.example.core.dao.booking.BookingDataDao
+import com.example.core.dao.BookingDataDao
 import com.example.core.mappers.BookingDataMapper
 import com.example.core.Constants
-import com.example.core.entities.booking_info.BookingDataDto
+import com.example.core.dto.BookingDataDto
 import javax.inject.Inject
 
 class DefaultBookingDataMapper @Inject constructor() : BookingDataMapper {

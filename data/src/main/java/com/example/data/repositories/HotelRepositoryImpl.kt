@@ -1,8 +1,7 @@
 package com.example.data.repositories
 
 import com.example.core.data.HotelRepository
-import com.example.core.entities.booking_info.BookingDataDto
-import com.example.core.entities.hotel.HotelDto
+import com.example.core.dto.HotelDto
 import com.example.core.states.NetworkState
 import com.example.data.network.HotelApiService
 import javax.inject.Inject

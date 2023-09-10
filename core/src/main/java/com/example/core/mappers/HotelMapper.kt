@@ -1,7 +1,7 @@
 package com.example.core.mappers
 
-import com.example.core.dao.hotel.HotelDao
-import com.example.core.entities.hotel.HotelDto
+import com.example.core.dao.HotelDao
+import com.example.core.dto.HotelDto
 
 interface HotelMapper {
     fun mapDtoToDao(hotelDto: HotelDto): HotelDao

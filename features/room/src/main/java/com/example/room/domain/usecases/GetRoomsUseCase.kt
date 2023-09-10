@@ -1,6 +1,6 @@
 package com.example.room.domain.usecases
 
-import com.example.core.dao.room.RoomDao
+import com.example.core.dao.RoomDao
 import com.example.core.data.RoomRepository
 import com.example.core.states.DomainResult
 import com.example.core.states.ErrorCause

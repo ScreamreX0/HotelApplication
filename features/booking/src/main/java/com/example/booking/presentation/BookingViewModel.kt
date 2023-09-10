@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.booking.domain.usecases.GetBookingDataUseCase
-import com.example.core.dao.booking.BookingDataDao
+import com.example.core.dao.BookingDataDao
 import com.example.core.states.DomainResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

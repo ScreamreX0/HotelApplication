@@ -1,7 +1,7 @@
 package com.example.data.repositories
 
 import com.example.core.data.RoomRepository
-import com.example.core.entities.room.RoomDto
+import com.example.core.dto.RoomDto
 import com.example.core.states.NetworkState
 import com.example.data.network.HotelApiService
 import javax.inject.Inject
