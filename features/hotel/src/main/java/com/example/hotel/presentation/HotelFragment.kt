@@ -16,6 +16,7 @@ import com.example.core.states.DomainResult
 import com.example.hotel.R
 import com.example.hotel.databinding.HotelFragmentBinding
 import com.google.android.material.chip.Chip
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -64,6 +65,7 @@ class HotelFragment : Fragment(R.layout.hotel_fragment) {
                     data.aboutTheHotel.peculiarities.forEach { peculitarity ->
                         binding.peculiaritiesChipGroup.addView(getPeculiarityChip(peculitarity))
                     }
+                    binding.viewPager.adapter = CarouselAdapter(data.images)
                 }
 
                 else -> {}

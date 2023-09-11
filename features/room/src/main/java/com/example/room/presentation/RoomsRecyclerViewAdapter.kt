@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.room.databinding.RoomItemBinding
 import com.example.core.dao.RoomDao
+import com.example.hotel.presentation.CarouselAdapter
 import com.google.android.material.chip.Chip
 
 class RoomsRecyclerViewAdapter(
@@ -26,13 +27,15 @@ class RoomsRecyclerViewAdapter(
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RoomViewHolder, position: Int) {
-        with (holder.binding) {
+        with(holder.binding) {
             chooseRoomButton.setOnClickListener { navigateToBook(rooms[position]) }
             name.text = rooms[position].name
             price.text = "${rooms[position].price.toInt()} ₽"
             rooms[position].peculiarities.forEach {
                 chipGroup.addView(getChip(it))
             }
+            viewPager.adapter = CarouselAdapter(rooms[position].images)
+            pricePer.text = rooms[position].pricePer
         }
     }
 

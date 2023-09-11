@@ -57,4 +57,5 @@ dependencies {
 
     // Modules
     implementation(project(path = ":core"))
+    implementation(project(path = ":features:hotel"))
 }
